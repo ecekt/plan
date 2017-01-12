@@ -1,0 +1,167 @@
+grab(scissors)
+cut(scissors,paper)
+drop(scissors)
+ops M3
+perform
+grab contents scissorstruetruetruefalse
+no cut performed
+removing cut scissors paper
+rem <!--cut-->K(scissors = ?x) ^ K(paper = ?y) => add(Kf, state(paper) = cut); 
+Pair 0 scissors paper
+explore here keypaper
+grab contents keytruetruetruefalse
+ key paper
+Pair 0 scissors paper
+Pair 1 key paper
+ops M0
+subplan
+grab(key)
+unlock(key,glassdoor)
+drop(key)
+ops S3
+perform
+grab contents keytruetruetruefalse
+no unlock performed
+removing unlock key glassdoor
+rem <!--unlock-->K(key = ?x) ^ K(woodendoor = ?y) => del(Kf, is_obstacle(woodendoor)) ^ add(Kf, state(woodendoor) = unlocked); K(key = ?x) ^ K(glassdoor = ?y) => del(Kf, is_obstacle(glassdoor)) ^ add(Kf, state(glassdoor) = unlocked);
+removing unlock key glassdoor
+rem <!--unlock-->K(key = ?x) ^ K(woodendoor = ?y) => del(Kf, is_obstacle(woodendoor)) ^ add(Kf, state(woodendoor) = unlocked); K(key = ?x) ^ K(glassdoor = ?y) => del(Kf, is_obstacle(glassdoor)) ^ add(Kf, state(glassdoor) = unlocked);
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+explore here Sub scissorsglassdoor
+grab contents scissorstruetruetruefalse
+here to grab scissors
+break scissors glassdoor
+adding break scissors glassdoor
+adding break scissors glassdoor
+adding SUBP pliers
+adding SUBPM pliers
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+subplan
+grab(scissors)
+break(scissors,glassdoor)
+drop(scissors)
+grab(key)
+unlock(key,woodendoor)
+drop(key)
+ops S6
+perform
+grab contents scissorstruetruetruefalse
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+grab contents keytruetruetruefalse
+no unlock performed
+removing unlock key woodendoor
+rem <!--unlock-->K(key = ?x) ^ K(woodendoor = ?y) => del(Kf, is_obstacle(woodendoor)) ^ add(Kf, state(woodendoor) = unlocked); 
+removing unlock key woodendoor
+rem <!--unlock-->K(key = ?x) ^ K(woodendoor = ?y) => del(Kf, is_obstacle(woodendoor)) ^ add(Kf, state(woodendoor) = unlocked); 
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+explore here Sub scissorswoodendoor
+grab contents scissorstruetruetruefalse
+here to grab scissors
+ scissors woodendoor
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+explore here Sub plierswoodendoor
+grab contents plierstruetruetruefalse
+here to grab pliers
+unlock pliers woodendoor
+adding unlock pliers woodendoor
+adding unlock pliers woodendoor
+adding SUBP glassbox
+adding SUBPM glassbox
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+Pair 6 pliers woodendoor
+subplan
+ops S0
+explore here Sub scissorsglassbox
+grab contents scissorstruetruetruefalse
+here to grab scissors
+break scissors glassbox
+adding break scissors glassbox
+adding break scissors glassbox
+adding SUBP knife
+adding SUBPM knife
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+Pair 6 pliers woodendoor
+Pair 7 scissors glassbox
+ops M0
+explore here plierspaper
+grab contents plierstruetruetruefalse
+ pliers paper
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+Pair 6 pliers woodendoor
+Pair 7 scissors glassbox
+Pair 8 pliers paper
+ops M0
+explore here glassboxpaper
+grab contents glassboxtruetruetruefalse
+ glassbox paper
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+Pair 6 pliers woodendoor
+Pair 7 scissors glassbox
+Pair 8 pliers paper
+Pair 9 glassbox paper
+ops M0
+explore here knifepaper
+grab contents knifetruetruetruefalse
+cut knife paper
+adding cut knife paper
+adding main knife
+Pair 0 scissors paper
+Pair 1 key paper
+Pair 2 key glassdoor
+Pair 3 scissors glassdoor
+Pair 4 key woodendoor
+Pair 5 scissors woodendoor
+Pair 6 pliers woodendoor
+Pair 7 scissors glassbox
+Pair 8 pliers paper
+Pair 9 glassbox paper
+Pair 10 knife paper
+grab(scissors)
+break(scissors,glassdoor)
+drop(scissors)
+grab(pliers)
+unlock(pliers,woodendoor)
+drop(pliers)
+grab(scissors)
+break(scissors,glassbox)
+drop(scissors)
+grab(knife)
+cut(knife,paper)
+drop(knife)
